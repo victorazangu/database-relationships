@@ -1,8 +1,10 @@
 package com.example.database_relationships.onetoone;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 @Entity
+
 public class Player {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -11,6 +13,7 @@ public class Player {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "profile_id",referencedColumnName = "id")
+    @JsonManagedReference
     private PlayerProfile playerProfile;
 
     public Player() {

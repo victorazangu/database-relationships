@@ -1,22 +1,32 @@
 package com.example.database_relationships.onetoone;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import jakarta.persistence.*;
 
 @Entity
 public class PlayerProfile {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String twiter;
+    private String twitter;
+
+    @OneToOne(mappedBy = "playerProfile" ,cascade = CascadeType.ALL)
+    @JsonBackReference
+    private Player player;
 
     public PlayerProfile() {
     }
 
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
     public PlayerProfile(String twiter) {
-        this.twiter = twiter;
+        this.twitter = twiter;
     }
 
     public int getId() {
@@ -27,19 +37,20 @@ public class PlayerProfile {
         this.id = id;
     }
 
-    public String getTwiter() {
-        return twiter;
+    public String getTwitter() {
+        return twitter;
     }
 
-    public void setTwiter(String twiter) {
-        this.twiter = twiter;
+    public void setTwitter(String twitter) {
+        this.twitter = twitter;
     }
 
     @Override
     public String toString() {
         return "PlayerProfile{" +
                 "id=" + id +
-                ", twiter='" + twiter + '\'' +
+                ", twitter='" + twitter + '\'' +
+                ", player=" + player +
                 '}';
     }
 }
