@@ -1,6 +1,5 @@
 package com.example.database_relationships.manytomany;
 
-import com.example.database_relationships.onetoone.PlayerProfile;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 

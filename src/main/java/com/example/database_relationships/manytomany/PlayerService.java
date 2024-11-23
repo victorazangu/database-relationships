@@ -1,7 +1,5 @@
 package com.example.database_relationships.manytomany;
 
-import com.example.database_relationships.onetoone.Player;
-import com.example.database_relationships.onetoone.PlayerProfile;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

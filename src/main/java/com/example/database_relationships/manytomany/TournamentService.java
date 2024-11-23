@@ -24,7 +24,6 @@ public class TournamentService {
         tournament.setId(0);
         return tournamentRepository.save(tournament);
     }
-
     public void deleteTournamentById(int id) {
         tournamentRepository.deleteById(id);
     }
@@ -34,4 +33,4 @@ public class TournamentService {
 //        tournament.addRegistration(registration);
 //        return tournamentRepository.save(tournament);
 //    }
-//}
+}

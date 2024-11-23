@@ -7,8 +7,9 @@ import java.util.List;
 
 @Service
 public class CategoryService {
+
     @Autowired
-    private CategoryRepository repo;
+    CategoryRepository repo;
 
     public List<Category> allCategories() {
         return repo.findAll();

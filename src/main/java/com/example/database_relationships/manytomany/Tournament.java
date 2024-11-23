@@ -1,6 +1,5 @@
 package com.example.database_relationships.manytomany;
 
-import com.example.database_relationships.onetomany.uni.Registration;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
